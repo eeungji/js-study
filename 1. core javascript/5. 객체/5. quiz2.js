@@ -40,7 +40,9 @@ while (true) {
   // 계정을 입력받고 해당 계정이 존재하는 계정인지를 확인
   var inputAccount = prompt('아이디를 입력하세요~'); // 사용자 입력한 계정명
 
-  // 회원목록 배열을 반복순회하여 입력한 계정명과 일치하는 계정이 있는지 체크
+  // 회원목록 배열을 반복순회하여 
+  // 입력한 계정명과 일치하는 계정이 있는지 체크
+
   var foundUser = null;
   for (var user of userList) {
     if (inputAccount === user.account) {

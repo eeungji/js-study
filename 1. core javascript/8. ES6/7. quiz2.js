@@ -1,21 +1,28 @@
-function min(userList, property) {
+function min(array, property) {
   // userList가 비어있으면 null을 반환
-  if (userList.length === 0) {
+  if (array.length === 0) {
     return null;
   }
 
-  let minValueUser = userList[0]; // 최소값을 가진 객체를 첫 번째 사용자로 초기화
+  let minValueUser = array[0]; // 최소값을 가진 객체를 첫 번째 사용자로 초기화
 
   // userList를 순회하면서 주어진 속성의 최소값을 찾음
-  for (const user of userList) {
+  for (const user of array) {
     if (user[property] < minValueUser[property]) {
       minValueUser = user;
     }
   }
-
   return minValueUser;
 }
-
+function filter(condition) {
+  const filteredArray = []; // 필터링된 회원들을 다시 담을 배열
+  for (const user of userList) {
+    if (condition(user)) {
+      filteredArray.push(user);
+    }
+  }
+  return filteredArray;
+}
 
 function find(callback) {
   for (const user of userList) {
@@ -23,7 +30,7 @@ function find(callback) {
       return user;
     }
   }
-  return undefined;
+  return null;
 }
 
 function some(callback) {

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <ul id="fruits">
+    <li class="f-item ap">사과</li>
+    <li class="f-item bn">바나나</li>
+    <li id="grape" class="f-item gp">포도</li>
+    <li class="f-item pc">복숭아</li>
+  </ul>
+
+  <script>
+
+    // const $grape = document.querySelector('.gp');
+    // const $grape = document.querySelector('#fruits li:nth-child(3)');
+    // const $grape = document.querySelector('.bn + li');
+    const $grape = document.querySelector('#grape');
+    console.log($grape);
+
+    $grape.textContent = '맛있는 포도';
+
+    const $fItemList = [...document.querySelectorAll('.f-item')];
+    console.log($fItemList);
+    console.log([1,2,3]);
+
+    // for (const $f of $fItemList) {
+    //   $f.style.color = 'red';
+    // }
+
+    $fItemList.forEach($f => {
+      $f.style.color = 'blue';
+    });
+
+    // $fItemList.pop();
+
+    // 유사 배열: 객체 형태를 유지한 배열
+    const foods = {
+      0: '짜장면',
+      1: '짬뽕',
+      2: '볶음밥',
+      length: 3,
+      age: 30
+    };
+    console.log(foods[0]);
+    console.log(foods.length);
+    console.log(foods.age);
+  
+  </script>
+</body>
+</html>

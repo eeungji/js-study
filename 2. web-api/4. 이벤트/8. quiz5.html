@@ -20,6 +20,7 @@
       const fontSize = fontSizeInput.value;
   
       // 입력된 값이 숫자인지 확인
+      // NaN 비교는 비교연산자로 불가능함
       if (!isNaN(fontSize) && fontSize !== '') {
         content.style.fontSize = `${fontSize}px`;
         warning.style.display = 'none';

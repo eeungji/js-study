@@ -1,6 +1,8 @@
 
 import insertTodoData from "./todo-insert.js";
 import { removeTodoData as rtd } from "./todo-remove.js";
+import toggleDone from './todo-done.js';
+import toggleModifyMode from "./todo-modify.js";
 
 const handlerBinding = () => {
   // 추가 버튼 클릭 이벤트

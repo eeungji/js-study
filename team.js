@@ -55,7 +55,7 @@ function start() {
     new Student('송지훈', [8, 4]),
     new Student('송호성', [1, 8]),
     new Student('신윤종', [1, 1]),
-    new Student('이동혁', [5, 8]),
+    // new Student('이동혁', [5, 8]),
     new Student('이승연', [8, 7]),
     new Student('이예진', [1, 6]),
     new Student('이지효', [2, 5]),
@@ -70,8 +70,10 @@ function start() {
     new Student('황준원', [2, 1]),
   ];
 
+  console.log(students.length);
+
   const teams = [];
-  const teamNumbers = [4,4,4,4,4,5,5];
+  const teamNumbers = [4,4,4,4,4,4,5];
   let teamNo = 1;
 
   teamNumbers.forEach((teamSize) => {

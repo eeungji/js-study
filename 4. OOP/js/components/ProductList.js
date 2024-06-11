@@ -5,9 +5,10 @@ import ProductItem from "./ProductItem.js";
 // UL태그 렌더링 담당
 class ProductList extends Component {
   // JSON형태의 배열을 받아옴
-  constructor(tagId, products) {
+  constructor(tagId, products, shoppingCart) {
     super(tagId);
     this.products = products;
+    this.shoppingCart = shoppingCart;
   }
 
   render() {
@@ -20,7 +21,7 @@ class ProductList extends Component {
     // 반복해서 li태그를 생성
     // console.log('products: ', this.products);
     this.products.forEach((prod) => {
-      new ProductItem(attr.id, prod).render();
+      new ProductItem(attr.id, prod, this.shoppingCart).render();
     });
 
     // div#app에 ul추가

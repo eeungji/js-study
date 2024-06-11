@@ -45,7 +45,7 @@ function start() {
   const teams = [];
 
   // 팀원 수 배열
-  const teamNumbers = [4, 4, 4, 4, 4, 4, 5];
+  const teamNumbers = [5,5,5,5,5,4];
 
   // 하나의 팀정보
   const teamList = [];

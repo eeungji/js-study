@@ -4,19 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .video {
+      width: 300px;
+    }
+    .video iframe {
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
   <div class="video">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/phuiiNCxRMg" title="aespa 에스파 &#39;Supernova&#39; MV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/phuiiNCxRMg" title="aespa 에스파 &#39;Supernova&#39; MV" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
+
 
   <button id="load">서버에서 정보 불러오기</button>
 
-  <ul id="content"></ul>
-  
+
+  <ul class="content"></ul>
+
   <script>
-    // 버튼 클릭 이벤트
-    document.getElementById('load').addEventListener('click', e => {
+     // 버튼 클릭 이벤트
+     document.getElementById('load').addEventListener('click', e => {
       // 서버에 비동기 통신 요청을 보내야 함.
       // 게시물 정보를 가져오기
       console.log('click!!');
@@ -34,13 +44,12 @@
         // 서버가 응답한 데이터는 JSON이라는 문자열 포맷의 데이터다.
         // JSON은 자바스크립트가 아니다.
         // JSON -> JS로 변환해야 함.
-        // JSON.parse() :  JSON -> JS
+        // JSON.parse() : JSON -> JS
         // JSON.stringify() : JS -> JSON
         const response = xhr.response;
         const boardList = JSON.parse(response);
-        console.log(boardList[0]);
-        
-        // 화면에 렌더링
+
+          // 화면에 렌더링
         const $ul = document.getElementById('content');
         let liTag = '';
 
@@ -57,6 +66,5 @@
       };
     });
   </script>
-
 </body>
 </html>

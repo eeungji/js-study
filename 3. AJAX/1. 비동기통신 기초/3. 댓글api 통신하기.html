@@ -16,7 +16,7 @@
   <div>
     <button id="add">등록</button>
   </div>
-  
+
   <script>
 
     const url = 'http://localhost:8383/api/v1/replies';
@@ -48,13 +48,13 @@
     get(`${url}/100`);
 
     // 댓글 등록 이벤트
-    document.getElementById('add').onclick = e => {
-      post(url, {
-        text: document.getElementById('content').value,
-        author: document.getElementById('author').value,
-        bno: 102
-      });
-    };
+    // document.getElementById('add').onclick = e => {
+    //   post(url, {
+    //     text: document.getElementById('content').value,
+    //     author: document.getElementById('author').value,
+    //     bno: 102
+    //   });
+    // };
 
   </script>
 </body>

@@ -6,46 +6,46 @@
   <title>Document</title>
 </head>
 <body>
-  
+
   <button id="show">서버요청!</button>
+  
 
   <script>
 
-    function get(url, callback) {
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', url);
-      xhr.send();
+  function get(url, callback) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.send();
 
-      xhr.onload = e => {
-        const response = JSON.parse(xhr.response);
-        callback(response);
-      };
-    }
+    xhr.onload = e => {
+      const response = JSON.parse(xhr.response);
+      callback(response)
+    };
+  }
 
     document.getElementById('show').addEventListener('click', e => {
-      // 버튼을 클릭하면 1. 두번째 회원을 조회하여
-      // 해당 회원이 쓴 2. 글의 목록을 조회한 후
-      // 해당 글의 3. 댓글들을 조회한다.
+      //버튼을 클릭하면 1. 두번째 회원을 조회하여
+      //해당 회원이 쓴 2. 글의 목록을 조회한 후 
+      //해당 글의 4. 댓글들을 조회한다.
       const url = 'https://jsonplaceholder.typicode.com';
 
-      
+
+      // 1 : 회원목록을 조회해서
+      // 2 : 2번 유저의 아이디를 찾기
+      // 3 : 게시물 목록 뒤지기?
       get(`${url}/users`, (response) => {
-        const userId = response[1].id;
+        const userId = response[1].id;       //response: 앞의 게시물 목록
         get(`${url}/users/${userId}/posts`, (response) => {
-          const postId = response[2].id;
-          get(`${url}/posts/${postId}/comments`, (response) => {
-            console.log(response);
-          }); // 해당 글의 댓글목록요청
+          const userId = response[2].id;  // 게시판 3번
+          get(`${url}/posts/${postId}/comments` (response) => {
+              console.log(response);
+          }); //해당 글의 댓글목록 요청
         }); // 해당 회원이 쓴 글 목록요청
       }); // 회원정보 조회
-
-
       
-      
+      get(`${url}/posts/${postId}/comments`) //해당 글의 댓글목록 요청
 
     });
   </script>
-
-
 </body>
 </html>
